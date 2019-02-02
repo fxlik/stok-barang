@@ -7,18 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 class BarangMasuk extends Model
 {
     protected $table = 'barang_masuk';
-    protected $fillable = ['barang_id', 'supplier_id', 'tgl_keluar', 'jumlah'];
+    protected $fillable = ['transaksi_id', 'barang_id', 'supplier_id', 'jumlah'];
 
     public $timestamps = false;
 
     public function barang()
     {
-    	return $this->hasMany('App\Barang');
+    	return $this->belongsTo('App\Barang');
     }
 
     public function supplier()
     {
-    	return $this->hasMany('App\Supplier');
+    	return $this->belongsTo('App\Supplier');
+    }
+
+    public function proyek()
+    {
+    	return $this->belongsTo('App\Proyek');
     }
     
+    public function transaksi()
+    {
+    	return $this->belongsTo('App\Transaksi');
+    }
 }

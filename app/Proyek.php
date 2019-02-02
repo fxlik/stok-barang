@@ -11,8 +11,9 @@ class Proyek extends Model
 
     public $timestamps = false;
 
-    public function barang_keluar()
+    public function transaksi()
     {
-    	return $this->belongTo('App\BarangKeluar');
+    	return $this->hasMany('App\Transaksi');
     }
+
 }

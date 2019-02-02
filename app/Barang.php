@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     protected $table = 'barang';
-    protected $fillable = ['nama_barang', 'satuan'];
+    protected $fillable = ['kode_barang', 'nama_barang', 'satuan'];
 
     public $timestamps = false;
 
     public function barang_masuk()
     {
-    	return $this->belongTo('App\BarangMasuk');
+    	return $this->hasMany('App\BarangMasuk');
     }
 
     public function barang_keluar()
     {
-    	return $this->belongTo('App\BarangKeluar');
+    	return $this->hasMany('App\BarangKeluar');
     }
 }

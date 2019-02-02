@@ -19,6 +19,10 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/classic.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/classic.date.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -28,7 +32,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Aplikasi Stok Barang
+                    MANAJEMEN GUDANG
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -45,12 +49,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('proyek.tampil')}}">Proyek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Barang Masuk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Barang Keluar</a>
                         </li>
                     </ul>
 
