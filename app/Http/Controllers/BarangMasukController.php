@@ -7,6 +7,11 @@ use PDF;
 
 class BarangMasukController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function tampilBM(){
         return view('barangMasuk');
     }
@@ -40,6 +45,12 @@ class BarangMasukController extends Controller
         }
         \App\BarangMasuk::insert($input_array);
     	return back();
+    }
+
+    public function HapusTransaksiMasuk($transaksi_id){
+        $transaksiMasuk = \App\Transaksi::where('id', $transaksi_id)->first();
+        $transaksiMasuk->destroy();
+        return redirect()->back();
     }
 
     public function deleteBarangMasuk($barangMasuk_id){

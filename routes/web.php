@@ -50,9 +50,9 @@ Route::get('/proyek/barang-keluar/{proyek_id}/{id}/kelola-transaksi', 'BarangKel
 
 // delete transaksi masuk @TransaksiController
 // hapus transaksi masuk
-Route::get('deleteTransaksiMasuk/{$transaksi_id}', 'TransaksiController@HapusTransaksiMasuk')->name('transaksiMasuk.delete');
+Route::get('deleteTransaksiMasuk/{transaksi_id}', 'TransaksiController@HapusTransaksiMasuk')->name('transaksiMasuk.delete');
 // hapus transaksi keluar
-Route::get('deleteTransaksiKeluar/{$transaksi_id}', 'TransaksiController@HapusTransaksiKeluar')->name('transaksiKeluar.delete');
+Route::get('deleteTransaksiKeluar/{transaksi_id}', 'TransaksiController@HapusTransaksiKeluar')->name('transaksiKeluar.delete');
 
 
 // transaksi barang masuk

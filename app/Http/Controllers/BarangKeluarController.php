@@ -7,8 +7,13 @@ use PDF;
 
 class BarangKeluarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function barangKeluar($proyek_id){
-        $transaksi = \App\Transaksi::with('barang_masuk')->where('proyek_id', $proyek_id)->where('tipe', 0)->orderBy('tgl', 'DESC')->get();
+        $transaksi = \App\Transaksi::with('barang_masuk')->where('proyek_id', $proyek_id)->where('tipe', 0)->orderBy('id', 'DESC')->get();
         $proyek = \App\Proyek::where('id', $proyek_id)->first();
         return view('barangKeluar', compact('proyek', 'transaksi'));
     }
@@ -16,7 +21,7 @@ class BarangKeluarController extends Controller
     public function kelolaTransaksiKeluar($proyek_id, $id){
         $barang = \App\Barang::all();
         $barangKeluar = \App\BarangKeluar::with('transaksi', 'barang')->where('transaksi_id', $id)->get();
-        $transaksi = \App\Transaksi::with('barang_keluar')->where('proyek_id', $proyek_id)->where('id', $id)->orderBy('tgl', 'DESC')->first();
+        $transaksi = \App\Transaksi::with('barang_keluar')->where('proyek_id', $proyek_id)->where('id', $id)->orderBy('id', 'DESC')->first();
         $proyek = \App\Proyek::where('id', $proyek_id)->first();
         // return $barangMasuk;
         return view('transaksiKeluar', compact('barangKeluar', 'transaksi', 'proyek', 'barang'));  

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function transaksiMasukBaru(Request $request){
         $transaksi = new \App\Transaksi();
         $generate_kode = "TBMAS".$request->proyek_id."IN".rand(1000, 9999);
@@ -19,8 +24,8 @@ class TransaksiController extends Controller
 
     public function HapusTransaksiMasuk($transaksi_id){
         $transaksiMasuk = \App\Transaksi::where('id', $transaksi_id)->first();
-        $transaksiMasuk->destroy();
-        return redirect()->back();
+        $transaksiMasuk->delete();
+        return back();
     }
 
     public function transaksiKeluarBaru(Request $request){
@@ -36,7 +41,7 @@ class TransaksiController extends Controller
 
     public function HapusTransaksiKeluar($transaksi_id){
         $transaksiKeluar = \App\Transaksi::where('id', $transaksi_id)->first();
-        $transaksiKeluar->destroy();
-        return redirect()->back();
+        $transaksiKeluar->delete();
+        return back();
     }
 }
