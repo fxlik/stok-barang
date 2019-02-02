@@ -4,6 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-12">
+            <div class="bread">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{route('home')}}">Beranda</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('proyek.tampil')}}">Proyek</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('barangKeluar.tampil', $proyek->id)}}">Barang Keluar</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Kelola Transaksi</li>
+                    </ol>
+                </nav>
+            </div>
+
             <div class="card">
             <div class="card-header"><b>{{$proyek->nama_proyek}}</b> || Manajemen Barang Keluar </div>
 

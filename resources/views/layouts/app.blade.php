@@ -42,7 +42,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('barang.tampil')}}">Barang</a>
+                            <a class="nav-link" href="{{route('home')}}">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('barang.tampil')}}">Barang</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('supplier.tampil')}}">Supplier</a>
