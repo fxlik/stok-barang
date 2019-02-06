@@ -39,6 +39,14 @@
                                 <label class="control-label">Satuan</label>
                                 <input id="satuan" type="text" name="satuan" class="form-control" placeholder="Satuan" required>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label">Jumlah Kebutuhan</label>
+                                <input id="jumlah_kebutuhan" type="number" name="jumlah_kebutuhan" class="form-control" placeholder="Jumlah Kebutuhan" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Harga Satuan</label>
+                                <input id="harga_satuan" type="number" name="harga_satuan" class="form-control" placeholder="Harga Satuan" required>
+                            </div>
                             <button type="submit" class="btn btn-sm btn-success add" id="simpanBarang">Simpan</button>
                         </form>
                     </div>
@@ -61,6 +69,14 @@
                                 <label class="control-label">Satuan</label>
                                 <input id="satuane" type="text" name="satuane" class="form-control" placeholder="Satuan" required>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label">Jumlah Kebutuhan</label>
+                                <input id="jumlah_kebutuhane" type="text" name="jumlah_kebutuhane" class="form-control" placeholder="Jumlah Kebutuhan" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Harga Satuan</label>
+                                <input id="harga_satuane" type="text" name="harga_satuane" class="form-control" placeholder="Harga Satuan" required>
+                            </div>
                             <input type="hidden" name="barang_id" id="barang_id">
                             <button type="submit" class="btn btn-sm btn-success add" id="updateBarang">Update</button>
                         </form>
@@ -73,6 +89,8 @@
                                     <th>Kode Barang</th>
                                     <th>Nama Barang</th>
                                     <th>Satuan</th>
+                                    <th>Jumlah Kebutuhan</th>
+                                    <th>Harga Satuan</th>
                                     <th style="text-align:center;"></th>
                                 </tr>
                             </thead>
@@ -83,8 +101,10 @@
                                     <td>{{$data->kode_barang}}</td>
                                     <td>{{$data->nama_barang}}</td>
                                     <td>{{$data->satuan}}</td>
+                                    <td>{{$data->jumlah_kebutuhan}}</td>
+                                    <td>{{$data->harga_satuan}}</td>
                                     <td style="text-align:center;">
-                                        <button id="wahh" data-id="{{$data->id}}" data-kodebarang="{{$data->kode_barang}}" data-namabarang="{{$data->nama_barang}}" data-satuan="{{$data->satuan}}" class="wahh btn btn-sm btn-warning">Edit</button>
+                                        <button id="wahh" data-id="{{$data->id}}" data-kodebarang="{{$data->kode_barang}}" data-namabarang="{{$data->nama_barang}}" data-satuan="{{$data->satuan}}" data-jumlahkebutuhan="{{$data->jumlah_kebutuhan}}" data-hargasatuan="{{$data->harga_satuan}}" class="wahh btn btn-sm btn-warning">Edit</button>
                                         <button id="dell" onclick="location.href='{{route('barang.delete', $data->id)}}'" class="dell btn btn-sm btn-danger">Hapus</button>
                                     </td>
                                 </tr>
@@ -196,6 +216,8 @@
         document.getElementById("kode_barange").value = $(this).data('kodebarang');
         document.getElementById("nama_barange").value = $(this).data('namabarang');
         document.getElementById("satuane").value = $(this).data('satuan');
+        document.getElementById("jumlah_kebutuhane").value = $(this).data('jumlahkebutuhan');
+        document.getElementById("harga_satuane").value = $(this).data('hargasatuan');        
         document.getElementById("barang_id").value = $(this).data('id');
         $(".dell").attr("disabled", true);
         document.getElementById('kode_barange').focus();

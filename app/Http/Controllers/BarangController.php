@@ -26,6 +26,8 @@ class BarangController extends Controller
         $barangg->kode_barang = $request->kode_barang;
         $barangg->nama_barang = $request->nama_barang;
         $barangg->satuan = $request->satuan;
+        $barangg->jumlah_kebutuhan = $request->jumlah_kebutuhan;
+        $barangg->harga_satuan = $request->harga_satuan;
         $barangg->save();
         return redirect()->back();
     }
@@ -41,10 +43,14 @@ class BarangController extends Controller
         $kode_barange = $request->kode_barange;
         $nama_barange = $request->nama_barange;
         $satuane = $request->satuane;
+        $jumlah_kebutuhane = $request->jumlah_kebutuhane;
+        $harga_satuane = $request->harga_satuane;
         $editBarang->update([
             'kode_barang' => $kode_barange,
             'nama_barang' => $nama_barange,
-            'satuan' => $satuane
+            'satuan' => $satuane,
+            'jumlah_kebutuhan' => $jumlah_kebutuhane,
+            'harga_satuan' => $harga_satuane
         ]);
 
         return back();

@@ -75,7 +75,7 @@
                                         <tr>
                                             <th style="width:10px;">No.</th>
                                             <th>Nama Barang</th>
-                                            <th>Jumlah Masuk</th>
+                                            <th>Jumlah Keluar</th>
                                             <th></th>
                                         </tr>
                                     </thead>

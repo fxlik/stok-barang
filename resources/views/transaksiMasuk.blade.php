@@ -76,7 +76,9 @@
                                             <th style="width:10px;">No.</th>
                                             <th>Nama Barang</th>
                                             <th>Supplier</th>
-                                            <th>Jumlah Masuk</th>
+                                            <th>Jumlah Barang Masuk</th>
+                                            <th>Harga Satuan</th>
+                                            <th>Total Harga (Rp.)</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -87,6 +89,8 @@
                                                 <td>{{$itam->barang->nama_barang}}</td>
                                                 <td>{{$itam->supplier->nama_supplier}}</td>
                                                 <td>{{$itam->jumlah}}</td>
+                                                <td>{{$itam->barang->harga_satuan}}</td>
+                                                <td>{{$itam->jumlah *$itam->barang->harga_satuan}}</td>
                                                 <td>
                                                     <button onclick="location.href='{{route('barangMasuk.delete', $itam->id)}}'" class="btn btn-sm btn-danger"><img style="width:10px; color:darkcyan;" src="{{url('/svg/x.svg')}}"> Hapus</button>
                                                 </td>

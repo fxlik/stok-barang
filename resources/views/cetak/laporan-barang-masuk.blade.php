@@ -51,7 +51,9 @@
                     <th>No</th>
                     <th>Nama Barang</th>
                     <th>Supplier</th>
-                    <th>Jumlah</th>
+                    <th>Jumlah Barang Masuk</th>
+                    <th>Harga Satuan</th>
+                    <th>Total Harga (Rp.)</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,6 +63,8 @@
                         <td>{{$data->barang->nama_barang}}</td>
                         <td>{{$data->supplier->nama_supplier}}</td>
                         <td>{{$data->jumlah}}</td>
+                        <td>{{$data->barang->harga_satuan}}</td>
+                        <td>{{$data->jumlah * $data->barang->harga_satuan}}</td>
                     </tr>
                 @endforeach
             </tbody>
